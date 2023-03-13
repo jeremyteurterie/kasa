@@ -20,8 +20,8 @@ function App() {
             <Route path="/location" element={<Location />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
-        <Footer />
       </div>
     </main>
   );
