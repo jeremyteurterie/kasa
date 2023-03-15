@@ -9,21 +9,25 @@ import Error404 from './pages/Error404';
 
 function App() {
   return (
-    <main>
-      <div className="container">
-        {' '}
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/location" element={<Location />} />
-            <Route path="*" element={<Error404 />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </div>
-    </main>
+    <>
+      <main>
+        <div className="container">
+          {' '}
+          <BrowserRouter>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route exact path="location/:locationId" element={<Location />} />
+              <Route path="*" element={<Error404 />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   );
 }
 
