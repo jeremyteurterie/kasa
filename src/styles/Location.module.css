@@ -1,0 +1,20 @@
+.dropDownContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropDownWrap {
+  width: 47%;
+}
+
+/* phone version */
+@media (max-width: 480px) {
+  .dropDownContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropDownWrap {
+    width: 100%;
+  }
+}

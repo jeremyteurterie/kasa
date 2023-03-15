@@ -1,6 +1,4 @@
-# Développez une application Web avec React et React Router
-
-## Getting Started with Create React App
+# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
