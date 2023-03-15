@@ -3,33 +3,18 @@ import { ReactComponent as StarIcon } from '../assets/star.svg';
 import style from '../styles/Ratings.module.css';
 
 const Ratings = ({ rating }) => {
-  // turn rating into number because it's string on JSON file
-  // transformer le rating en nombre parce que c'est un string dans le fichier JSON
-  const numberOfStars = parseInt(rating, 10);
   const maxRating = 5;
-  // set number of grey star by extracting rating from maxRating
-  // définir le nombre d'étoiles grises en extrayant le rating de maxRating
+  const numberOfStars = parseInt(rating, 10);
   const numberOfEmptyStar = maxRating - numberOfStars;
-
-  const starIcons = [];
-
-  // generate numbers of filled stars and store them in an array
-  // générer des nombres d'étoiles remplies et les stocker dans un array
-  for (let i = 0; i < numberOfStars; i++) {
-    starIcons.push(<StarIcon key={i} className={style.star} />);
-  }
-
-  const emptyStarIcons = [];
-  // generate numbers of empty stars and store them in an array
-  // générer des nombres d'étoiles vides et les stocker dans un array
-  for (let i = 0; i < numberOfEmptyStar; i++) {
-    emptyStarIcons.push(<StarIcon key={i} className={style.emptyStar} />);
-  }
+  const starIcons = Array.from({ length: numberOfStars }, (_, i) => (
+    <StarIcon key={i} className={style.star} />
+  ));
+  const emptyStarIcons = Array.from({ length: numberOfEmptyStar }, (_, i) => (
+    <StarIcon key={i} className={style.emptyStar} />
+  ));
 
   return (
     <div className={style.starWrap}>
-      {/* return two arrays to display */}
-      {/* retourner deux array à afficher */}
       {starIcons}
       {emptyStarIcons}
     </div>
