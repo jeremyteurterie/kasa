@@ -3,10 +3,7 @@ import { useState } from 'react';
 import style from '../styles/Dropdown.module.css';
 
 const DropDown = ({ title, paragraphe, wrapClassName }) => {
-  // the initial value (isOpen) is false
   const [isOpen, setIsOpen] = useState(false);
-
-  // click event handler -> turns initial value to be 'true'
   const handleOnClick = () => {
     setIsOpen(!isOpen);
   };

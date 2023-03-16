@@ -3,17 +3,13 @@ import { useState, useEffect } from 'react';
 import useDataId from '../hooks/useDataId';
 import DetailHeader from '../components/DetailHeader';
 import Dropdown from '../components/Dropdown';
-import style from '../styles/Location.module.css';
 import Gallery from '../components/Gallery';
+import style from '../styles/Location.module.css';
 
 const Location = () => {
-  // useParams get the URL (here URL is ID of data)
-  // useParams récupère l'URL (ici l'URL est l'ID des données)
   const { locationId } = useParams();
   const navigate = useNavigate();
 
-  // useState with default value of an empty object
-  // useState avec la valeur par défaut d'un objet vide
   const [locations, setLocations] = useState({
     title: '',
     location: '',
@@ -25,19 +21,12 @@ const Location = () => {
     pictures: [],
   });
 
-  // to prevent empty page rendering instead of rendering error page
-  // pour empêcher le rendu de la page vide au lieu de rendre la page d'erreur
   useEffect(() => {
-    // matchedLocation : data that is correspond to ID
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const matchedLocation = useDataId(locationId);
     if (!matchedLocation) {
       navigate('/404');
     } else {
-      // if there is data that matches ID,
-      // use matchedLocation data instead of innitial value of empty object(which is 'locations')
-      // s'il existe des données qui correspondent à l'ID,
-      // utiliser les données matchedLocation au lieu de la valeur initiale de l'objet vide
       setLocations(matchedLocation);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
