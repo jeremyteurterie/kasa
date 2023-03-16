@@ -8,8 +8,16 @@ const DropDown = ({ title, paragraphe, wrapClassName }) => {
     setIsOpen(!isOpen);
   };
 
-  const display = isOpen ? 'block' : 'none';
-  const arrowDirection = isOpen ? 'down' : 'up';
+  let display;
+  let arrowDirection;
+
+  if (isOpen) {
+    display = 'block';
+    arrowDirection = 'down';
+  } else {
+    display = 'none';
+    arrowDirection = 'up';
+  }
 
   return (
     <div
