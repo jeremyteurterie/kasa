@@ -6,12 +6,14 @@ import style from '../styles/Gallery.module.css';
 const Gallery = ({ imageArray, desc }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const displayArrow = imageArray.length > 1;
+
   const getNextIndex = (currentIndex, arrayLength) => {
     return currentIndex < arrayLength - 1 ? currentIndex + 1 : 0;
   };
   const getPrevIndex = (currentIndex, arrayLength) => {
     return currentIndex > 0 ? currentIndex - 1 : arrayLength - 1;
   };
+
   const next = () =>
     setCurrentIndex((prevIndex) => getNextIndex(prevIndex, imageArray.length));
   const previous = () =>
