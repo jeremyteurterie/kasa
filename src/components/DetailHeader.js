@@ -1,7 +1,7 @@
 import React from 'react';
-import style from '../styles/DetailHeader.module.css';
 import Ratings from '../components/Ratings';
 import Tags from '../components/Tags';
+import style from '../styles/DetailHeader.module.css';
 
 const DetailHeader = ({ title, location, name, picture, tagList, rating }) => {
   return (
