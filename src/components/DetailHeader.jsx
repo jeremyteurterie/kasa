@@ -1,6 +1,6 @@
 import React from 'react';
 import Ratings from '../components/Ratings';
-import Tags from '../components/Tags';
+import Tags from './Tags';
 import style from '../styles/DetailHeader.module.css';
 
 const DetailHeader = ({ title, location, name, picture, tagList, rating }) => {
